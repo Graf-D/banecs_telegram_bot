@@ -136,7 +136,7 @@ def not_anec(message):
     send_anecdotes(message.chat.id)
 
 
-@bot.message_handler(func=lambda x: 'еще' in x.text.lower.replace('ё', 'е'))
+@bot.message_handler(func=lambda x: 'еще' in x.text.lower().replace('ё', 'е'))
 def more_anecs(message):
     send_anecdotes(message.chat.id)
 
