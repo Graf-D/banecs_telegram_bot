@@ -81,7 +81,7 @@ def draw_keyboard(chat_id, response_text):
                                                    'Несите еще!')
     button_stop = telebot.types.KeyboardButton(chr(0x1F645) + 'Хватит')
     keyboard.add(button_continue, button_stop)
-    bot.send_message(message.chat.id, response_text, reply_markup=keyboard)
+    bot.send_message(chat_id, response_text, reply_markup=keyboard)
 
 
 @bot.message_handler(func=lambda x: 'первый' in x.text.lower())
