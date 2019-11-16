@@ -128,8 +128,7 @@ def second_is_chosen(message):
     draw_keyboard(message.chat.id, response_text)
 
 
-@bot.message_handler(func=lambda x:
-                     x.text == chr(0x1F612) + 'Что-то из этого вообще не анек')
+@bot.message_handler(func=lambda x: 'не анек' in x.text.lower())
 def not_anec(message):
     bot.send_message(message.chat.id, 'Ок, вот другие посты!',
                      reply_markup=telebot.types.ReplyKeyboardRemove())
